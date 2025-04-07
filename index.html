@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Roboto", sans-serif;
+        }
+
+        .firstItem {
+            display: flex;
+
+            transition: max-height 2s;
+        }
+
+        .ghost {
+            font-family: "Dancing Script", cursive;
+            font-weight: bold;
+        }
+
+        footer:hover {
+            display: none;
+            transition: all;
+            padding: 4px;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .duke {
+            /* font-family: "Playwrite HU", cursive;   */
+            font-family: "Dancing Script", cursive;
+            font-weight: 700;
+            font-size: 22px;
+            transform: skew(-15deg);
+        }
+    </style>
+</head>
+
+<body class="    w-[100vw] min-h-[100vh] bg-[#56a1e2] flex justify-center items-center">
+    <div
+        class="relative bg-white max-w-[630px] w-[60%] flex flex-col justify-center  max-mobile:min-h-[340px] items-center max-mobile:w-[90%] mobile:max-tab:w-[70%] space-y-3 rounded-xl  ">
+        <div class="flex gap-4 mt-7 pb-6 max-mobile:mt-0">
+            <p class="text-3xl font-bold max-mobile:text-2xl">ToDo List</p>
+            <!-- image of todo list -->
+            <img src="./download.png" alt="" loading="lazy" height="40px" width="40px"
+                class="max-mobile:w-[35px] max-mobile:h-[35px]">
+        </div>
+        <div class="relative   flex flex-row w-[80%] max-mobile:w-[95%]  bg-[#8080803f] py-3 max-mobile:py-2 rounded-full justify-between"
+            onclick="this.querySelector('input').focus()">
+            <!--   input field for creating toDo  -->
+            <input data-input type="text" placeholder="Add your task "
+                class=" ml-8 placeholder:text-[20px] placeholder:p-0 appearance-none focus:outline-0 text-[18px] w-[75%]">
+            <!--  click on  + to create todo item  -->
+            <div data-createTodo onclick="checkTodoInput()" class="bg-[green] mr-4 w-[60px] h-[60px] max-mobile:w-[50px] max-mobile:h-[50px] rounded-full flex justify-center items-center  absolute  -bottom-1 -right-[15px] max-mobile:-right-[18px] hover:bg-[#008000d8] 
+                         group  transition duration-200">
+                <i
+                    class="fa-solid fa-plus text-3xl font-bold text-white group-hover:text-black transition duration-200"></i>
+            </div>
+        </div>
+
+        <!--   text notify whether list created or not -->
+        <h1 class=" yesno hidden  py-3 pt-0  text-sm font-medium text-[green]">Todo item Created Successfully ...</h1>
+        <h1 class=" yesno2 hidden  py-3 pt-0  text-sm font-medium text-[red]">Deleted Successfully ...</h1>
+
+        <!--  lists are appended inside this div -->
+        <div class="todoArea flex flex-col mt-12 w-[80%] max-mobile:w-[90%] gap-y-4   justitfy-center items-start pb-8">
+
+            <div data-sampleItem
+                class="firstItem bg-[#8080803f] w-full flex justify-between py-3 max-mobile:py-[7px] rounded-lg items-center">
+                <p class="ml-6 text-lg font-medium text-[#494848]  " contentEditable="false"> Todo items here ....</p>
+                <div class="mr-3 flex gap-x-4">
+                    <!-- edit icon -->
+                    <i class="fa-solid fa-pen text-lg  text-[gray] hover:text-black transition duration-200"></i>
+                    <!--  delete icon   -->
+                    <i delete-todo
+                        class="fa-solid fa-trash-can  text-lg text-[gray] hover:text-black transition duration-200"></i>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <footer
+        class="text-black absolute bottom-9 right-8 max-mobile:bottom-5 max-mobile:right-4 font-[italic] z-50 bg-[#56a1e2]  pl-2">
+        <span class="ghost text-[18px]">created
+            <br><span class="ghost  absolute top-[14px] left-5 text-center flex justify-center text-[18px]">by</span>
+        </span>
+    </footer>
+    <p class="absolute bottom-7 right-9 z-10 duke  max-mobile:bottom-3 max-mobile:right-5  ">mahi</p>
+
+
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/0c2a2e4c5c.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
